@@ -4,8 +4,10 @@ import catImg from "../../../public/cat-hero.png"
 import Image from "next/image"
 const Hero = () => {
   return(
+    // Seção principal do Hero com fundo vermelho e texto branco
     <search className="bg-[#E84C3D] text-white relative overflow-hidden">
 
+      {/* Imagem de fundo para telas menores */}
       <div>
         <Image 
           src={dogImg}
@@ -23,6 +25,7 @@ const Hero = () => {
 
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
+          {/* Texto principal e botão de contato */}
           <div>
             <h1 
               className="text-3xl md:text-4xl lg:text-5xl font-bold leading-12"
@@ -48,6 +51,7 @@ const Hero = () => {
                 Contato via WhatsApp
               </a>
             
+            {/* Promoção de desconto */}
             <div className="mt-8">
               <p className="text-sm mb-4">
                 <b 
@@ -55,7 +59,8 @@ const Hero = () => {
                 </b>
                   de desconto na primeira compra
               </p>
-
+            
+            {/* Imagem do gato ao lado da promoção */}
             <div className="flex mt-4">
               <div className="w-32 hidden lg:block">
                 <Image
@@ -71,6 +76,7 @@ const Hero = () => {
 
           </div>
 
+          {/* Imagem do cachorro para telas maiores */}
           <div className="hidden md:block h-full relative">
            <Image 
             src={dogImg}

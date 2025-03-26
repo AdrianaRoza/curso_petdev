@@ -1,14 +1,18 @@
 "use client"
-
+// Importando o carrossel e ícones
 import useEmblaCarousel from "embla-carousel-react"
-import { ChevronLeft,ChevronRight,Scissors,Syringe,CarTaxiFront,Hotel, Clock } 
+import { ChevronLeft,ChevronRight,} 
 from "lucide-react"
+
+// Importando imagens dos clientes
 import tutor1 from "../../../public/tutor1.png"
 import tutor2 from "../../../public/tutor2.png"
 import tutor3 from "../../../public/tutor3.jpg"
 import tutor4 from "../../../public/tutor4.jpg"
 import Image from "next/image"
 
+
+// Lista de depoimentos
 const testimonials = [
   {
     content:
@@ -40,15 +44,17 @@ const testimonials = [
 
 
 const Testimonials = () => {
-
+  // Configuração do carrossel (loop ativado)
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop:true,
   })
 
+  // Função para mover para o slide anterior
   function scrollPrev(){
     emblaApi?.scrollPrev();
   }
 
+  // Função para mover para o próximo slide
   function scrollNext(){
     emblaApi?.scrollNext();
   }
@@ -57,6 +63,7 @@ const Testimonials = () => {
     <section className="bg-[#FFD449] py-16">
       <div className="container mx-auto px-4">
         
+        {/* Título da seção */}
         <h2 className="text-4xl font-bold text-center mb-12"
             data-aos="zoom-in"
         >
@@ -65,12 +72,15 @@ const Testimonials = () => {
         
         <div className="relative max-w-4xl mx-auto">
 
+          {/* Carrossel */}
           <div className='overflow-hidden' ref={emblaRef}>
             <div className="flex">
 
                 {testimonials.map((item, index) => (
                   <div key={index} className="flex-[0_0_100%] min-w-0 px-3">
-                  
+                
+
+                {/* Cartão de Depoimento */}
                 <article 
                   className="bg-[#1e293b] text-white rounded-2xl 
                     p-6 space-y-4 h-full flex flex-col"
@@ -78,7 +88,8 @@ const Testimonials = () => {
                   
                   <div 
                     className='flex flex-col items-center text-center space-y-4'
-                  >
+                  >   
+                      {/* Foto do tutor */}
                       <div className='relative w-24 h-24'>
                         <Image
                           src={item.image}
@@ -89,8 +100,11 @@ const Testimonials = () => {
                         />
                       </div>
 
+                      {/* Texto do depoimento */}
                       <p className='text-gray-200'>{item.content}</p>
 
+
+                      {/* Nome e papel do tutor */}
                       <div>
                         <p className='font-bold'>{item.author}</p>
                         <p className='text-sm text-gray-400'>{item.role}</p>
@@ -104,14 +118,17 @@ const Testimonials = () => {
 
             </div>
           </div>
-
+          
+          {/* Botão de voltar no carrossel */}
           <button
             className='bg-white flex items-center justify-center rounded-full shadow-lg w-10 h-10 absolute left-3 -translate-y-1/2 -translate-x-1/2 top-1/2 z-10'
             onClick={scrollPrev}
           >
             <ChevronLeft className='w-6 h-6 text-gray-600' />
           </button>
+          
 
+          {/* Botão de avançar no carrossel */}
           <button
             className='bg-white flex items-center justify-center rounded-full shadow-lg w-10 h-10 absolute -right-6 -translate-y-1/2 -translate-x-1/2 top-1/2 z-10'
             onClick={scrollNext}

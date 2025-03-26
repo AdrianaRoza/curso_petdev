@@ -1,18 +1,20 @@
 "use client"
-
+// Importando a biblioteca Embla Carousel para carrossel
 import useEmblaCarousel from "embla-carousel-react"
+
+// Importando ícones da biblioteca Lucide e Phosphor Icons
 import { ChevronLeft,ChevronRight,Scissors,Syringe,CarTaxiFront,Hotel, Clock } 
 from "lucide-react"
 import { WhatsappLogo } from "@phosphor-icons/react"
 
-
+// Definição dos serviços oferecidos no pet shop
 const services = [
   {
     title: "Banho e Tosa",
     description: "Inclui banho com produtos específicos para o tipo de pelagem e pele do animal, corte de unhas, limpeza das orelhas e tosa personalizada (higiênica ou estilizada).",
     duration: "1h",
     price: "$50",
-    icon: <Scissors />,
+    icon: <Scissors />,// Ícone correspondente ao serviço
     linkText: 'Olá, vi no site sobre Banho e tosa e gostaria de mais informações.'
   },
   {
@@ -43,7 +45,7 @@ const services = [
 
 
 const Services = () => {
-
+  // Inicializando o carrossel com Embla
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop:false,
     align:"start",
@@ -53,6 +55,7 @@ const Services = () => {
     }
   })
 
+  // Função para navegar para o slide anterior
   function scrollPrev(){
     emblaApi?.scrollPrev();
   }
@@ -69,6 +72,7 @@ const Services = () => {
         
         <div className="relative">
 
+          {/* Carrossel */}
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
 
@@ -89,12 +93,14 @@ const Services = () => {
                       </div>
                     </div>
 
+                    {/* Seção de informações adicionais */}
                     <div className="border-t border-gray-700 pt-4 flex items-center justify-between">
                       <div className=" flex items-center gap-2 text-sm">
                         <Clock className="w-4 h-4"/>
                         <span>{item.duration}</span>
                       </div>
 
+                      {/* Botão para contato via WhatsApp */}
                       <a 
                           target='_blank'
                           href={`https://wa.me/556799998800?text=Olá vim pelo site e gostaria de mais informações sobre ${item.title}`} 
@@ -113,7 +119,9 @@ const Services = () => {
 
             </div>
           </div>
+          
 
+          {/* Botões de navegação do carrossel */}
           <button 
             className="bg-white flex items-center justify-center rounded-full 
               shadow-lg w-10 h-10 absolute left-3 -translate-y-1/2 
