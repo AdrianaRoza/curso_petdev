@@ -70,7 +70,11 @@ const About = () => {
 
           <div className="flex gap-2">
           <a 
-            href="#"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            target='_blank'
+            href={`https://wa.me/556799998800?text=Olá vim pelo site e gostaria de mais informações`}
+    
             className="bg-[#E84C3D] text-white flex items-center 
               justify-center w-fit gap-2 px-4 py-2 rounded-md"
           >
