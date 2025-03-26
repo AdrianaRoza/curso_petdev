@@ -29,10 +29,11 @@ const About = () => {
 
           <div 
             className="absolute w-40 h-40 right-4 -bottom-8 border-4 
-              overflow-hidden rounded-lg border-white">
+              overflow-hidden rounded-lg border-white"
+              data-aos="zoom-in">
             <Image
               src={about2Img}
-              alt="Foto docat"
+              alt="Foto do cat"
               fill
               quality={100}
               priority
@@ -41,7 +42,7 @@ const About = () => {
 
           </div>
 
-          <div className="space-y-6 mt-10">
+          <div className="space-y-6 mt-10" data-aos="fade-left">
           <h2 className="text-4xl font-bold">SOBRE</h2>
 
           <p className="">

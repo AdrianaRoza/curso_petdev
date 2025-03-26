@@ -57,7 +57,11 @@ const Testimonials = () => {
     <section className="bg-[#FFD449] py-16">
       <div className="container mx-auto px-4">
         
-        <h2 className="text-4xl font-bold text-center mb-12">Depoimentos dos nossos clientes</h2>
+        <h2 className="text-4xl font-bold text-center mb-12"
+            data-aos="zoom-in"
+        >
+          Depoimentos dos nossos clientes
+          </h2>
         
         <div className="relative max-w-4xl mx-auto">
 
@@ -69,9 +73,12 @@ const Testimonials = () => {
                   
                 <article 
                   className="bg-[#1e293b] text-white rounded-2xl 
-                    p-6 space-y-4 h-full flex flex-col">
+                    p-6 space-y-4 h-full flex flex-col"
+                  >
                   
-                  <div className='flex flex-col items-center text-center space-y-4'>
+                  <div 
+                    className='flex flex-col items-center text-center space-y-4'
+                  >
                       <div className='relative w-24 h-24'>
                         <Image
                           src={item.image}
